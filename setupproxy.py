@@ -156,7 +156,7 @@ if len(ip_strings) > 0:
         port_no += 1
     cfg_file_content += 'flush'
 
-    home_path = os.path.expanduser('~')
+    home_path = '/home/' + os.getlogin()
     cfg_file = home_path + '/3proxy.cfg'
     with open(cfg_file, 'w') as f:
         f.write(cfg_file_content)
@@ -193,34 +193,34 @@ if len(ip_strings) > 0:
     start_proxy_cmd = f'sudo 3proxy {cfg_file}'
     os.system(start_proxy_cmd)
 """
-home_path = os.path.expanduser('~')
+home_path = '/home/' + os.getlogin()
 os.chdir(home_path)
 print(os.getcwd())
 
-# with open("/etc/sysctl.conf", "w") as f:
-#     f.write(sysctl_conf)
+with open("/etc/sysctl.conf", "w") as f:
+    f.write(sysctl_conf)
 
-# os.system('sudo apt -y install fail2ban software-properties-common build-essential libevent-dev libssl-dev git')
-# time.sleep(10)
-# os.system('git clone https://github.com/z3apa3a/3proxy')
-# time.sleep(2)
-# os.chdir(home_path + '/3proxy')
+os.system('sudo apt -y install fail2ban software-properties-common build-essential libevent-dev libssl-dev git')
+time.sleep(10)
+os.system('git clone https://github.com/z3apa3a/3proxy')
+time.sleep(2)
+os.chdir(home_path + '/3proxy')
 
-# with open("src/proxy.h", "w") as f:
-#     f.write(src_proxy)
+with open("src/proxy.h", "w") as f:
+    f.write(src_proxy)
 
-# os.system('sudo ln -s Makefile.Linux Makefile')
-# os.system('sudo make')
-# time.sleep(8)
-# os.system('sudo make install')
-# time.sleep(5)
-# os.system('sudo systemctl is-enabled 3proxy.service')
+os.system('sudo ln -s Makefile.Linux Makefile')
+os.system('sudo make')
+time.sleep(8)
+os.system('sudo make install')
+time.sleep(5)
+os.system('sudo systemctl is-enabled 3proxy.service')
 
-# with open("/etc/iproute2/rt_tables", "w") as f:
-#     f.write(rt_tables)
+with open("/etc/iproute2/rt_tables", "w") as f:
+    f.write(rt_tables)
 
-# os.chdir(home_path)
-# with open("startproxy.py", "w") as f:
-#     f.write(startproxy)
+os.chdir(home_path)
+with open("startproxy.py", "w") as f:
+    f.write(startproxy)
 
-# os.system('sudo python3 startproxy.py')
+os.system('sudo python3 startproxy.py')
