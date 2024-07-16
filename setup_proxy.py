@@ -202,7 +202,7 @@ with open("/etc/sysctl.conf", "w") as f:
 
 os.system('sudo apt -y install fail2ban software-properties-common build-essential libevent-dev libssl-dev git')
 time.sleep(10)
-os.system('git clone https://github.com/z3apa3a/3proxy')
+os.system('git clone https://github.com/3proxy/3proxy.git')
 time.sleep(2)
 os.chdir(home_path + '/3proxy')
 
