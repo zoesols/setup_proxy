@@ -112,6 +112,11 @@ rt_tables = """#
 3 gw3
 4 gw4
 5 gw5
+6 gw6
+7 gw7
+8 gw8
+9 gw9
+10 gw10
 """
 
 startproxy = """#!/usr/bin/env phtyon3
@@ -210,6 +215,7 @@ with open("src/proxy.h", "w") as f:
     f.write(src_proxy)
 
 os.system('sudo ln -s Makefile.Linux Makefile')
+time.sleep(1)
 os.system('sudo make')
 time.sleep(8)
 os.system('sudo make install')
