@@ -51,9 +51,9 @@ net.ipv4.ip_forward=1
 # _or_
 """
 
-src_proxy = """#define COPYRIGHT "(c)3APA3A, Vladimir Dubrovin & 3proxy.org\\n"
-                 "Documentation and sources: https://3proxy.org/\\n"
-                 "Please read license agreement in \'copying\' file.\\n"
+src_proxy = """#define COPYRIGHT "(c)3APA3A, Vladimir Dubrovin & 3proxy.org\\n"\\
+                 "Documentation and sources: https://3proxy.org/\\n"\\
+                 "Please read license agreement in \'copying\' file.\\n"\\
                  "You may not use this program without accepting license agreement"
 
 
