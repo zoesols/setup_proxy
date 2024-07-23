@@ -506,6 +506,16 @@ if len(ip_strings) > 0:
     print('Start the proxy')
     start_proxy_cmd = f'sudo 3proxy {cfg_file}'
     os.system(start_proxy_cmd)
+    print('---------------------------------------')
+    print('[Test]')
+    start_proxy_port = 3128
+    for t in gateway_info:
+        print('---------------------------------------')
+        print(f'Proxy Port : {start_proxy_port}')
+        test_cmd = f'sudo curl https://wtfismyip.com/text'
+        os.system(test_cmd)
+        start_proxy_port += 1
+        
 """
 home_path = '/home/' + os.getlogin()
 os.chdir(home_path)
@@ -514,7 +524,7 @@ print(os.getcwd())
 with open("/etc/sysctl.conf", "w") as f:
     f.write(sysctl_conf)
 
-os.system('sudo apt -y install fail2ban software-properties-common build-essential libevent-dev libssl-dev git')
+os.system('sudo apt -y install fail2ban software-properties-common build-essential libevent-dev libssl-dev curl')
 time.sleep(10)
 os.system('git clone https://github.com/3proxy/3proxy.git')
 time.sleep(2)
