@@ -13,7 +13,7 @@ try:
     serials = list(set(serials))
     host = subprocess.check_output("hostname").decode('utf-8').strip()
     if len(serials) > 0:
-        msg = f'@seungbeompaulkim\n**[{host}]**'
+        msg = f'<@seungbeompaulkim>\n**[{host}]**'
         for s in serials:
             m = f'\n- {s} : MTP'
             msg += m
