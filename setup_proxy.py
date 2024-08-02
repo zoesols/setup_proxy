@@ -470,7 +470,7 @@ if len(ip_strings) > 0:
         port_no += 1
     cfg_file_content += 'flush'
 
-    home_path = '/home/' + os.getlogin()
+    home_path = '/home/zoeadmin'
     cfg_file = home_path + '/3proxy.cfg'
     with open(cfg_file, 'w') as f:
         f.write(cfg_file_content)
@@ -517,9 +517,8 @@ if len(ip_strings) > 0:
         start_proxy_port += 1
         
 """
-home_path = '/home/' + os.getlogin()
+home_path = '/home/zoeadmin'
 os.chdir(home_path)
-print(os.getcwd())
 
 with open("/etc/sysctl.conf", "w") as f:
     f.write(sysctl_conf)
