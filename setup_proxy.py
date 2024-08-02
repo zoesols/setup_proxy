@@ -494,14 +494,15 @@ if len(ip_strings) > 0:
         cmd4 = f'sudo ip rule add from 192.168.{mid_no}.100/32 table gw{num}'
         cmd5 = f'sudo ip rule add to 192.168.{mid_no}.100/32 table gw{num}'
         os.system(cmd1)
-        time.sleep(2)
+        time.sleep(1)
         print(f'Proxy No. {num} : setting up routes')
         os.system(cmd2)
         os.system(cmd3)
         os.system(cmd4)
         os.system(cmd5)
-        time.sleep(3)
+        time.sleep(1)
         num += 1
+    time.sleep(3)
     print('---------------------------------------')
     print('Start the proxy')
     start_proxy_cmd = f'sudo 3proxy {cfg_file}'
