@@ -18,14 +18,14 @@ try:
     host = subprocess.check_output("hostname").decode('utf-8').strip()
     if len(serials_tether) > 0 or len(serials_mtp) > 0:
         qty = len(serials_tether) + len(serials_mtp)
-        msg = f'**[{host}]**\n__* Connected Device : {qty}__'
+        msg = f'**[{host}]**\n* Connected Device : {qty}'
         if len(serials_tether) > 0:
-            msg += '\n- Tethering : '
+            msg += f'\n- Tethering({len(serials_tether)}) : '
             for t in serials_tether:
                 msg += t + ', '
             msg = msg[:-2]
         if len(serials_mtp) > 0:
-            msg += '\n- MTP : '
+            msg += f'\n- MTP({len(serials_mtp)}) : '
             for s in serials_mtp:
                 msg += s + ', '
             msg = msg[:-2]
