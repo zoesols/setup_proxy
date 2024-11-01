@@ -20,12 +20,12 @@ try:
         qty = len(serials_tether) + len(serials_mtp)
         msg = f'**[{host}]**\n* Connected Device : {qty}'
         if len(serials_tether) > 0:
-            msg += f'\n- Tethering({len(serials_tether)}) : '
+            msg += f'\n- Tethering ({len(serials_tether)}) : '
             for t in serials_tether:
                 msg += t + ', '
             msg = msg[:-2]
         if len(serials_mtp) > 0:
-            msg += f'\n- MTP({len(serials_mtp)}) : '
+            msg += f'\n- MTP ({len(serials_mtp)}) : '
             for s in serials_mtp:
                 msg += s + ', '
             msg = msg[:-2]
