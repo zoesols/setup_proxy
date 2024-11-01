@@ -32,6 +32,7 @@ try:
         send_discord_webhook(msg)
     else:
         msg = f'**[{host}]**\n__* No Device Connected__'
+        send_discord_webhook(msg)
 
 except:
     pass
