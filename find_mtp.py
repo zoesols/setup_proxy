@@ -12,9 +12,16 @@ try:
     tether = subprocess.check_output("hwinfo --usb | grep -A 2 tethering", shell=True).decode('utf-8')
     serials_tether = re.compile(r'Serial ID: "([\s\S]+?)"').findall(tether)
     serials_tether = list(set(serials_tether))
+except:
+    serials_tether = []
+try:
     mtp = subprocess.check_output("hwinfo --usb | grep -A 2 MTP", shell=True).decode('utf-8')
     serials_mtp = re.compile(r'Serial ID: "([\s\S]+?)"').findall(mtp)
     serials_mtp = list(set(serials_mtp))
+except:
+    serials_mtp = []
+
+try:
     host = subprocess.check_output("hostname").decode('utf-8').strip()
     if len(serials_tether) > 0 or len(serials_mtp) > 0:
         qty = len(serials_tether) + len(serials_mtp)
@@ -33,6 +40,5 @@ try:
     else:
         msg = f'**[{host}]**\n__* No Device Connected__'
         send_discord_webhook(msg)
-
-except:
-    pass
+except Exception as e:
+    print(e)
