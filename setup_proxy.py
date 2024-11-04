@@ -435,6 +435,7 @@ import subprocess
 import re
 import time
 
+time.sleep(20)
 ip_route = subprocess.check_output(['ip','route'])
 decoded = ip_route.decode('utf-8')
 ip_strings = re.findall(r'192.168.\d{1,3}.\d{1,3} dev enx.+', decoded)
@@ -524,7 +525,7 @@ os.chdir(home_path)
 with open("/etc/sysctl.conf", "w") as f:
     f.write(sysctl_conf)
 
-os.system('sudo apt -y install fail2ban software-properties-common build-essential libevent-dev libssl-dev curl')
+os.system('sudo apt -y install fail2ban software-properties-common build-essential libevent-dev libssl-dev curl hwinfo')
 time.sleep(10)
 os.system('git clone https://github.com/3proxy/3proxy.git')
 time.sleep(2)
