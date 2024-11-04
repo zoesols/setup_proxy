@@ -482,6 +482,7 @@ if len(ip_strings) > 0:
     os.chdir(home_path)
 
     num = 1
+    time.sleep(5)
     for p in gateway_info:
         print('---------------------------------------')
         print(f'Proxy No. {num} : setting up IP')
