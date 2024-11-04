@@ -514,7 +514,7 @@ if len(ip_strings) > 0:
     for t in gateway_info:
         print('---------------------------------------')
         print(f'Proxy Port : {start_proxy_port}')
-        test_cmd = f'sudo curl https://wtfismyip.com/text'
+        test_cmd = f'sudo curl https://wtfismyip.com/text --interface {t[0]}'
         os.system(test_cmd)
         start_proxy_port += 1
         
