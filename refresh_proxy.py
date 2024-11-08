@@ -47,7 +47,7 @@ if len(ip_strings) > 0:
 
         for n in proxy_list:
             if mid_no == n[1]:
-                num = n[0]          
+                num = str(n[0])
                 cmd1 = f'sudo ifconfig {dev_id} 192.168.{mid_no}.100'
                 cmd2 = f'sudo ip route add 192.168.{mid_no}.0/24 dev {dev_id} src 192.168.{mid_no}.100 table gw{num}'
                 cmd3 = f'sudo ip route add default via 192.168.{mid_no}.{g_no} dev {dev_id} table gw{num}'
