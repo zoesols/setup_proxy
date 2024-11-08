@@ -51,9 +51,11 @@ if len(ip_strings) > 0:
                 cmd1 = f'sudo ifconfig {dev_id} 192.168.{mid_no}.100'
                 cmd2 = f'sudo ip route add 192.168.{mid_no}.0/24 dev {dev_id} src 192.168.{mid_no}.100 table gw{num}'
                 cmd3 = f'sudo ip route add default via 192.168.{mid_no}.{g_no} dev {dev_id} table gw{num}'
+                print(cmd1)
+                print(cmd2)
+                print(cmd3)
                 os.system(cmd1)
                 time.sleep(1)
-                print(f'Proxy No. {num} : setting up routes')
                 os.system(cmd2)
                 os.system(cmd3)
                 time.sleep(1)
